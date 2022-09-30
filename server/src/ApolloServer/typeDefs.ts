@@ -1,8 +1,32 @@
-import { ApolloServer } from "@apollo/server";
-
-import { startStandaloneServer } from "@apollo/server/standalone";
+const { gql } = require("apollo-server");
 
 const typeDefs = `#graphql
+
+ type Message{
+   text: String
+   createdAt: String
+   createdBy: String
+}
+
+  type User {
+	username: String
+	email: String
+	password: String
+	token: String
+  }
+
+  input CreateAccountInput {
+	username: String
+	email: string, 
+	password: String
+  }
+
+  input CreateAccountInput {
+	email: string, 
+	password: String
+  }
+
+
 
   type Book {
 
