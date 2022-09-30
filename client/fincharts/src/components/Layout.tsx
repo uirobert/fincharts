@@ -1,6 +1,5 @@
 import React from "react";
 import Footer from "./Footer";
-// import Footer from "./Footer"; - Hide for
 import Header from "./Header";
 
 type LayoutProps = {
@@ -12,6 +11,7 @@ export const Layout = (props: LayoutProps) => {
 		<>
 			<Header />
 			{props.children}
+			<Footer />
 		</>
 	);
 };

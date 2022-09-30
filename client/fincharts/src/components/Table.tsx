@@ -1,15 +1,95 @@
 /* This example requires Tailwind CSS v2.0+ */
+
 const transactions = [
 	{
-		id: "AAPS0L",
-		company: "Chase & Co.",
-		share: "CAC",
-		commission: "+$4.37",
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
 		price: "$3,509.00",
-		quantity: "12.00",
-		netAmount: "$4,397.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
 	},
-	// More transactions...
+
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
 ];
 
 export default function Table() {
@@ -17,18 +97,17 @@ export default function Table() {
 		<div className='px-4 sm:px-6 lg:px-8'>
 			<div className='sm:flex sm:items-center'>
 				<div className='sm:flex-auto'>
-					<h1 className='text-xl font-semibold text-gray-900'>Transactions</h1>
-					<p className='mt-2 text-sm text-gray-700'>
-						A table of placeholder stock market data that does not make any
-						sense.
+					<h1 className='text-xl font-semibold text-white'>Cypto Currencies</h1>
+					<p className='mt-2 text-sm text-white'>
+						Check out the lastest Cyrpto Price and add to your watch list
 					</p>
 				</div>
 				<div className='mt-4 sm:mt-0 sm:ml-16 sm:flex-none'>
-					<button
+					{/* <button
 						type='button'
 						className='inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto'>
 						Export
-					</button>
+					</button> */}
 				</div>
 			</div>
 			<div className='mt-8 flex flex-col'>
@@ -41,27 +120,27 @@ export default function Table() {
 										<th
 											scope='col'
 											className='whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6'>
-											Transaction ID
+											Cryto ID
 										</th>
 										<th
 											scope='col'
 											className='whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900'>
-											Company
+											Name
 										</th>
 										<th
 											scope='col'
 											className='whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900'>
-											Share
+											price
 										</th>
 										<th
 											scope='col'
 											className='whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900'>
-											Commision
+											MarketCap
 										</th>
 										<th
 											scope='col'
 											className='whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900'>
-											Price
+											Volume
 										</th>
 										<th
 											scope='col'
@@ -76,7 +155,7 @@ export default function Table() {
 										<th
 											scope='col'
 											className='relative whitespace-nowrap py-3.5 pl-3 pr-4 sm:pr-6'>
-											<span className='sr-only'>Edit</span>
+											<span className='sr-only'>+</span>
 										</th>
 									</tr>
 								</thead>
@@ -87,28 +166,28 @@ export default function Table() {
 												{transaction.id}
 											</td>
 											<td className='whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900'>
-												{transaction.company}
+												{transaction.name}
 											</td>
 											<td className='whitespace-nowrap px-2 py-2 text-sm text-gray-900'>
-												{transaction.share}
+												{transaction.price}
 											</td>
 											<td className='whitespace-nowrap px-2 py-2 text-sm text-gray-500'>
-												{transaction.commission}
+												{transaction.marketcap}
 											</td>
 											<td className='whitespace-nowrap px-2 py-2 text-sm text-gray-500'>
 												{transaction.price}
 											</td>
 											<td className='whitespace-nowrap px-2 py-2 text-sm text-gray-500'>
-												{transaction.quantity}
+												{transaction.volume}
 											</td>
 											<td className='whitespace-nowrap px-2 py-2 text-sm text-gray-500'>
-												{transaction.netAmount}
+												{transaction.price}
 											</td>
-											<td className='relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-6'>
+											<td className='relative whitespace-nowrap py-2 pl-3 text-right text-sm font-medium sm:pr-6'>
 												<a
 													href='#'
 													className='text-indigo-600 hover:text-indigo-900'>
-													Edit
+													+Add to your watch list
 													<span className='sr-only'>, {transaction.id}</span>
 												</a>
 											</td>

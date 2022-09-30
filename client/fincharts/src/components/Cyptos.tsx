@@ -18,12 +18,12 @@ import { Fragment } from "react";
 import { Menu, Popover, Transition } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Table from "./Table";
 
 const user = {
 	name: "Chelsea Hagon",
 	email: "chelsea.hagon@example.com",
-	imageUrl:
-		"https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+	imageUrl: "",
 };
 const navigation = [
 	{ name: "Dashboard", href: "#", current: true },
@@ -43,7 +43,7 @@ function classNames(...classes: any) {
 
 export default function Cryptos() {
 	return (
-		<div className='min-h-screen bg-gray-100'>
+		<div className='min-h-screen bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r'>
 			<Popover
 				as='header'
 				className={({ open }) =>
@@ -69,6 +69,7 @@ export default function Cryptos() {
 											<label htmlFor='search' className='sr-only'>
 												Search Cryptos i.e BTC
 											</label>
+
 											<div className='relative'>
 												<div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
 													<MagnifyingGlassIcon
@@ -103,19 +104,15 @@ export default function Cryptos() {
 										href='#'
 										className='ml-5 flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
 										<span className='sr-only'>View notifications</span>
-										<BellIcon className='h-6 w-6' aria-hidden='true' />
+										{/* <BellIcon className='h-6 w-6' aria-hidden='true' /> */}
 									</a>
 
 									{/* Profile dropdown */}
 									<Menu as='div' className='relative ml-5 flex-shrink-0'>
 										<div>
 											<Menu.Button className='flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
-												<span className='sr-only'>Open user menu</span>
-												<img
-													className='h-8 w-8 rounded-full'
-													src={user.imageUrl}
-													alt=''
-												/>
+												{/* <span className='sr-only'>Open user menu</span> */}
+												{/* <img className='' src={user.imageUrl} alt='' /> */}
 											</Menu.Button>
 										</div>
 										<Transition
@@ -228,6 +225,7 @@ export default function Cryptos() {
 					</aside>
 				</div>
 			</div>
+			<Table />
 		</div>
 	);
 }

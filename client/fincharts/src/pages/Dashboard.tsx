@@ -10,7 +10,6 @@ export const DashBoard = (props: DashBoardProps) => {
 	return (
 		<>
 			<Cryptos />
-			<Table />
 		</>
 	);
 };
