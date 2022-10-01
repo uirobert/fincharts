@@ -9,6 +9,47 @@ const transactions = [
 		marketcap: "$3,509.00",
 		volume: "12,000000",
 	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
+
+	{
+		id: "BTC",
+		image: "wwww",
+		name: "Bitcon",
+		price: "$3,509.00",
+		marketcap: "$3,509.00",
+		volume: "12,000000",
+	},
 
 	{
 		id: "BTC",
@@ -97,9 +138,11 @@ export default function Table() {
 		<div className='px-4 sm:px-6 lg:px-8'>
 			<div className='sm:flex sm:items-center'>
 				<div className='sm:flex-auto'>
-					<h1 className='text-xl font-semibold text-white'>Cypto Currencies</h1>
+					<h1 className='text-xl font-semibold text-white'>
+						Track Cypto Currencies
+					</h1>
 					<p className='mt-2 text-sm text-white'>
-						Check out the lastest Cyrpto Price and add to your watch list
+						Check out the lastest Cyrpto Prices and add to your waych list.
 					</p>
 				</div>
 				<div className='mt-4 sm:mt-0 sm:ml-16 sm:flex-none'>
@@ -110,7 +153,7 @@ export default function Table() {
 					</button> */}
 				</div>
 			</div>
-			<div className='mt-8 flex flex-col'>
+			<div className='mt-8 flex flex-col overflow-auto'>
 				<div className='-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 					<div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
 						<div className='overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg'>

@@ -1,62 +1,64 @@
-const { gql } = require("apollo-server");
-const typeDefs = `#graphql
+import { gql } from "apollo-server-express";
+const typeDefs = gql `
+	type Message {
+		text: String!
+		createdAt: String
+		createdBy: String
+	}
 
- type Message{
-   text: String
-   createdAt: String
-   createdBy: String
-}
+	type User {
+		email: String!
+		token: String
+	}
 
-  type User {
-	username: String
-	email: String
-	password: String
-	token: String
-  }
+	input CreateAccountInput {
+		email: String
+	}
 
-  input CreateAccountInput {
-	username: String
-	email: string, 
-	password: String
-  }
+	type Coin {
+		id: String
+		image: String
+		name: String
+		price: String
+		marketcap: String
+		volume: String
+		detail: String
+	}
 
-  input CreateAccountInput {
-	email: string, 
-	password: String
-  }
+	input CreateCoin {
+		id: String
+		image: String
+		name: String
+		price: String
+		marketcap: String
+		volume: String
+		detail: String
+	}
 
-
-
-  type Book {
-
-    title: String
-
-    author: String
-
-  }
-
-
-  # The "Query" type is special: it lists all of the available queries that
-
-  # clients can execute, along with the return type for each. In this
-
-  # case, the "books" query returns an array of zero or more Books (defined above).
-
-  type Query {
-
-    books: [Book]
-
-  }
-
+	type Query {
+		coins: [Coin]
+	}
 `;
-const books = [
+export { typeDefs };
+const coins = [
     {
-        title: "The Awakening",
-        author: "Kate Chopin",
+        id: "BTC",
+        image: "../../../",
+        name: "Bitcon",
+        price: "$3,509.00",
+        marketcap: "$3,509.00",
+        volume: "12,000000",
+        detail: "/login",
     },
     {
-        title: "City of Glass",
-        author: "Paul Auster",
+        id: "ETH",
+        image: "../../../",
+        name: "Bitcon",
+        price: "$3,509.00",
+        marketcap: "$3,509.00",
+        volume: "12,000000",
+        detail: "/login",
     },
 ];
-export { typeDefs, books };
+export { coins };
+module.exports = typeDefs;

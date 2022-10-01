@@ -15,7 +15,9 @@ export default function Header() {
 						<a href='#'>
 							<span className='sr-only'>Your Company</span>
 
-							<p className='text-white text-xl'>CryptoCharts</p>
+							<p className='text-white text-xl'>
+								<a href='/'>CryptoCharts</a>
+							</p>
 							{/* <img
 								className='h-10 w-auto'
 								src='https://tailwindui.com/img/logos/mark.svg?color=white'
@@ -35,14 +37,14 @@ export default function Header() {
 					</div>
 					<div className='ml-10 space-x-4'>
 						<a
-							href='#'
-							className='inline-block rounded-md border border-transparent text-lg  text-white hover:bg-opacity-75'>
-							Sign in
+							href='/Login'
+							className='inline-block rounded-md border border-transparent  text-white text-xl hover:bg-opacity-75'>
+							Login
 						</a>
 						<a
-							href='#'
+							href='Signup'
 							className='inline-block rounded-md border border-transparent bg-white py-2 px-4 text-base font-medium text-black hover:bg-indigo-50'>
-							Sign up
+							Signup
 						</a>
 					</div>
 				</div>

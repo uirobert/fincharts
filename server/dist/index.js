@@ -1,12 +1,15 @@
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
-import { resolvers } from "./ApolloServer/resolvers.js";
-import { typeDefs } from "./ApolloServer/typeDefs.js";
+// @ts-nocheck
+import express from "express";
+const app = express();
+import { ApolloServer } from "apollo-server-express";
+import { resolvers } from "./resolvers.ts";
+import { typeDefs } from "./typeDefs.ts";
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    csrfPrevention: true,
+    cache: "bounded",
 });
-const { url } = await startStandaloneServer(server, {
-    listen: { port: 4000 },
-});
-console.log(`🚀  Server ready at: ${url}`);
+const port = process.env.PORT || 4000;
+server.applyMiddleware({ app });
+app.listen({ port }, () => console.log(`The Server ready at port: ${port}`));
