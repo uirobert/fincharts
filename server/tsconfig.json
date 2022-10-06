@@ -1,19 +1,15 @@
 {
 	"compilerOptions": {
-		"rootDirs": ["src"],
-
+		"lib": ["es6"], // we target Node.js(v6)
+		"module": "commonjs", // export compatibility
 		"outDir": "./dist",
-
-		"lib": ["es2020"],
-
-		"target": "es2020",
-
-		"module": "None",
-
-		"moduleResolution": "node",
-
+		"target": "es6", // we target Node.js(v6)
+		"moduleResolution": "node", // we target Node.js(v6)
 		"esModuleInterop": true,
-
-		"types": ["node"]
-	}
+		"declaration": true, // generate TypeScript definitions
+		"rootDir": ".",
+		"types": ["node"] // only use needed types
+	},
+	"exclude": ["node_modules", "dist"],
+	"include": ["index.ts", "lib/**/*", "spec/**/*", "src/**/*"]
 }

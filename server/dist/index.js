@@ -1,15 +1,24 @@
-// @ts-nocheck
-import express from "express";
-const app = express();
-import { ApolloServer } from "apollo-server-express";
-import { resolvers } from "./resolvers.ts";
-import { typeDefs } from "./typeDefs.ts";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const { ApolloServer, gql } = require("apollo-server");
+// MONGO SUPPORT
+const mongoose = require("mongoose");
+//
+const { ApolloServerPluginLandingPageLocalDefault, } = require("apollo-server-core");
+const fs = require("fs");
+const typeDefs = require("./typeDefs");
+const resolvers = require("./resolvers");
+const MONGODB = "mongodb+srv://vercel-admin-user:u07SJ82sKigtnlQs@cluster0.qvrgowh.mongodb.net/admin";
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    csrfPrevention: true,
     cache: "bounded",
+    // plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],
 });
-const port = process.env.PORT || 4000;
-server.applyMiddleware({ app });
-app.listen({ port }, () => console.log(`The Server ready at port: ${port}`));
+mongoose.connect(MONGODB, { useNewUrlParser: true }).then(() => {
+    console.log("Mongo Working!! on port -5000");
+    return server.listen({ port: 5000 });
+});
+server.listen().then(({ url }) => {
+    console.log(`🚀  Apollo Server Working at ${url}`);
+});
