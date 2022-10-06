@@ -1,5 +1,7 @@
 export {};
 const { ApolloServer, gql } = require("apollo-server");
+
+const test = require("./resolvers/testdata");
 // MONGO SUPPORT
 const mongoose = require("mongoose");
 //
@@ -26,6 +28,7 @@ main()
 
 const server = new ApolloServer({
 	typeDefs,
+	test,
 	resolvers,
 	cache: "bounded",
 
