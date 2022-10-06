@@ -1,7 +1,6 @@
 export {};
 const { ApolloServer, gql } = require("apollo-server");
 
-const test = require("./resolvers/testdata");
 // MONGO SUPPORT
 const mongoose = require("mongoose");
 //
@@ -11,6 +10,7 @@ const {
 const fs = require("fs");
 const typeDefs = require("./typeDefs");
 const resolvers = require("./resolvers");
+const test = require("./resolvers/testdata");
 
 const MONGODB =
 	"mongodb+srv://vercel-admin-user:u07SJ82sKigtnlQs@cluster0.qvrgowh.mongodb.net/admin";
@@ -30,6 +30,7 @@ const server = new ApolloServer({
 	typeDefs,
 	test,
 	resolvers,
+	mocks: true,
 	cache: "bounded",
 
 	// plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],

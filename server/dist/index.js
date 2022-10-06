@@ -10,7 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const { ApolloServer, gql } = require("apollo-server");
-const test = require("./resolvers/testdata");
 // MONGO SUPPORT
 const mongoose = require("mongoose");
 //
@@ -18,6 +17,7 @@ const { ApolloServerPluginLandingPageLocalDefault, } = require("apollo-server-co
 const fs = require("fs");
 const typeDefs = require("./typeDefs");
 const resolvers = require("./resolvers");
+const test = require("./resolvers/testdata");
 const MONGODB = "mongodb+srv://vercel-admin-user:u07SJ82sKigtnlQs@cluster0.qvrgowh.mongodb.net/admin";
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     return yield mongoose.connect(MONGODB, {
